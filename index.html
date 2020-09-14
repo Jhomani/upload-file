@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./index.css">
+	<title>Upload file</title>
+</head>
+<body>
+	<div class="container">
+		<div class="wrap">
+			<h1>Change your avatar</h1>
+			<div class="profile">
+				<div class="profile__options">
+					 <label for="upload" onkeydown="handleAriaUpload(event, this)" id="upload_label" title="Upload New File" tabindex="2" class="aria-upload">upload new</label>
+					<a class="last-btn btn" tabindex="2" onclick="changeAvatar('last')"
+					onkeyup="if(event.keyCode !== 13) return;changeAvatar('last');">
+						&larr;
+					</a>
+	
+					<a class="next-btn btn" tabindex="3" onclick="changeAvatar('next')" onkeyup="if(event.keyCode !== 13) return;changeAvatar('next');">
+						&rarr;
+					</a>
+				</div>
+				<div class="avatar" id="avatar">
+					<div id="preview"><img src="https://source.unsplash.com/h13Y8vyIXNU/150x150" id="avatar-image" class="avatar_img" id="">
+					</div>
+					<div class="avatar_upload" >
+						<label class="upload_label">Upload
+							<input type="file" id="upload">
+						</label>
+					</div>
+				</div>
+				<div class="nickname">
+					<span id="name" tabindex="4" data-key="1" contenteditable="true" onkeyup="changeAvatarName(event, this.dataset.key, this.textContent)" onblur="changeAvatarName('blur', this.dataset.key, this.textContent)">Walrus</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="./index.js"></script>	
+</body>
+</html>
